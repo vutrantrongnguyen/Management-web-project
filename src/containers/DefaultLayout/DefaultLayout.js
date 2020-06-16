@@ -13,7 +13,20 @@ import {
   AppSidebarHeader,
   AppSidebarMinimizer,
   AppSidebarNav,
+  // Badge,
+
 } from '@coreui/react';
+import {Badge,Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Col,
+  Progress,
+  Row,
+  // Callout
+} from 'reactstrap';
 // sidebar nav config
 import navigation from '../../_nav';
 // routes config
@@ -71,6 +84,8 @@ class DefaultLayout extends Component {
                 </Switch>
               </Suspense>
             </Container>
+            {/*<WidgetsDropdown />*/}
+
           </main>
           <AppAside fixed>
             <Suspense fallback={this.loading()}>
