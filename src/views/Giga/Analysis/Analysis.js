@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-  // Badge,
+  Badge,
   Button, Card,
   CardBody, CardHeader,
   // CardHeader,
@@ -9,12 +9,11 @@ import {
   Nav,
   NavItem,
   NavLink, Progress,
-  // Pagination, PaginationItem, PaginationLink,
+  Pagination, PaginationItem, PaginationLink,
   Row,
   // TabContent,
   Table,
   TabPane,
-  Pagination
 } from 'reactstrap';
 import Spinner from "reactstrap/es/Spinner";
 import config from "../../Config/strings";
@@ -433,120 +432,101 @@ class Analysis extends Component {
             <p className="font-weight-bold">QUẢN LÝ PHÂN TÍCH SỰ CỐ</p>
             <div className="animated fadeIn">
               <Row>
-                <Col xs="12" md="12">
-                  {this.renderCard("Sự cố cây đổ", "https://image3.tienphong.vn/665x449/Uploaded/2020/cajwqxjwp/2019_08_04/68431560_13252830442_cwej.jpg", "Đối với những cây bị đổ, nghiêng sẽ giao cho đơn vị quản lý thực hiện trồng dựng lại, chằng chống cẩn thận để đảm bảo cây xanh có thể sinh trưởng bình thường. \n" +
-                    "Đối với cây to bật gốc sẽ được chuyển về các vườn ươm. Nếu cây phù hợp với quy hoạch cây đô thị thì sẽ chuyển lại vị trí cũ sau khi phát triển tốt tại vườn ươm. Nếu không, sẽ thay thế cây phù hợp vào vị trí cũ.\n" +
-                    "\n" +
-                    "Đại diện Sở Xây dựng cho biết thêm, cây đổ tập trung vào một số loại cây như: Xà cừ, Lát hoa, Phượng, Bằng lăng.")}
-                  {this.renderCard("Sự cố cây xanh lưới điện đường giao thông", "https://vnn-imgs-f.vgcloud.vn/2018/06/14/18/cay-phuong-gia-do-de-5-nguoi-tren-pho-ha-noi-4.jpg", "Vụ việc khiến xe máy BKS 30N4-6407 có 3 người (1 người đàn ông, 1 phụ nữ và 1 trẻ em) và xe máy BKS 29Y3 371.14 có 2 người (1 phụ nữ và 1 trẻ em) đều bị thương, trong đó có 2 người bị thương nặng với những vết thương vùng đầu.\n" +
-                    "\n" +
-                    "Bà Vũ Thị Hồng, ở 84 Quán Sứ, kể: Lúc đó cây phượng đổ từ từ, 2 xe máy đi qua thì cây đổ ập xuống, mọi người nhanh chóng vào cứu người bị cây đè và gọi ngay cho cấp cứu.\n" +
-                    "\n" +
-                    "Khoảng 10 phút sau, 2 xe cấp cứu đã đến hiện trường đưa các nạn nhân vào bệnh viện. CSGT cùng lực lượng chức năng phường Trần Hưng Đạo có mặt phân luồng giao thông.")}
-                  {this.renderCard("Sự cố lưới điện nhà trường", "http://res.cgvdt.vn/ckfinder/images/2016/Thoi%20Su%20va%20Suy%20Nghi/2068/IMAG0405.jpg", "Cây cối bị đổ ảnh hưởng đến sinh kế của nhiều người. Có những thợ sửa xe, cắt tóc, quán cóc bao năm nương tựa vào bóng mát cây xanh để kiếm sống, nay bỗng dưng không còn chỗ bấu víu. Còn lập lại chỗ sinh nhai mới trong mảnh đất chật người rất khó. Cây đổ khiến lòng người cũng đổ theo.\n" +
-                    "\n" +
-                    "Việc cây đổ còn nói lên một thực trạng buồn là trong quá trình đô thị hóa, chúng ta đã không cân bằng được không gian xanh và không gian sống. Người ta quá mải mê, thậm chí tranh đấu cho không gian sống mà đã xem nhẹ, hoặc lãng quên đi cái phần không gian xanh. Xã hội ngày càng biến chuyển, trái đất ngày càng nóng lên, người ngày càng đông và không gian sống ngày một ngột ngạt. Trong sự chuyển biến đó, sẽ rất nguy hiểm nếu như một ngày nào đó, những bóng cây xanh không còn.")}
+
+
+                <Col xs="12" lg="12">
+                  <Card>
+                    <CardHeader>
+                      <i className="fa fa-align-justify"></i> Thông tin nhận từ drone
+                    </CardHeader>
+                    <CardBody>
+                      <Table responsive striped>
+                        <thead>
+                        <tr>
+                          <th>Thông tin sự cố</th>
+                          <th>Trạng thái trước</th>
+                          <th>Trạng thái hiện tại</th>
+                          <th>Nhóm gửi</th>
+                          {/*<th>Nội dung</th>*/}
+                          <th>Xử lý</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>Sự cố cây đổ</td>
+                          <td><img style={{width:'200px'}} src="https://lh3.googleusercontent.com/proxy/u_c-8dx3IApISsReNFPqshSpKNDJ4NArgnPw8evKFlbwte8esDLziS-fS5AjPqgV4p4dgnuwYbpCs5RByuBTD0ar07qEAX6Pz9KxFN8SHbr_9JM4pET8CbtdPxM_EcTVkFhsKD-EEwxMvAqukWcoBF7VVCZytw4_WoRRp-lQK73PXOl9Xug2KGXExioKvU8p2A" alt=""/></td>
+                          <td><img style={{width:'200px'}} src="https://image3.tienphong.vn/665x449/Uploaded/2020/cajwqxjwp/2019_08_04/68431560_13252830442_cwej.jpg" alt=""/></td>
+                          <td>Nhóm 4</td>
+                          {/*<td>Đối với cây to bật gốc sẽ được chuyển về các vườn ươm. Nếu cây phù hợp với quy hoạch cây đô thị thì sẽ chuyển lại vị trí cũ</td>*/}
+                          <td>
+                            <Button color="primary" style={{margin:'5px'}} onClick={() => this.props.history.push('/analysis/detail/')} >Tạo báo cáo</Button>
+                            <Button color="danger" style={{ margin:'5px'}}>Xóa</Button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sự cố lưới điện nhà trường</td>
+                          <td><img style={{width:'200px'}} src="https://afamilycdn.com/150157425591193600/2020/5/31/anh-15-a-15907491298011580754235-15907500860191964446243-1590885845000-1590885845268941692394.png" alt=""/></td>
+                          <td><img style={{width:'200px'}} src="http://res.cgvdt.vn/ckfinder/images/2016/Thoi%20Su%20va%20Suy%20Nghi/2068/IMAG0405.jpg" alt=""/></td>
+                          <td>Nhóm 8</td>
+                          {/*<td>Việc cây đổ còn nói lên một thực trạng buồn là trong quá trình đô thị hóa, chúng ta đã không cân bằng được không</td>*/}
+                          <td>
+                            <Button color="primary" style={{ margin:'5px'}} onClick={() => this.props.history.push('/analysis/detail/')} >Tạo báo cáo</Button>
+                            <Button color="danger" style={{ margin:'5px'}}>Xóa</Button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sự cố cây xanh lưới điện đường giao thông</td>
+                          <td><img style={{width:'200px'}} src="https://photo-1-baomoi.zadn.vn/w1000_r1/2017_08_10_324_22979700/cb5699120256eb08b247.jpg" alt=""/></td>
+                          <td><img style={{width:'200px'}} src="https://vnn-imgs-f.vgcloud.vn/2018/06/14/18/cay-phuong-gia-do-de-5-nguoi-tren-pho-ha-noi-4.jpg" alt=""/></td>
+                          <td>Nhóm 4</td>
+                          {/*<td>Lúc đó cây phượng đổ từ từ, 2 xe máy đi qua thì cây đổ ập xuống, mọi người nhanh chóng vào cứu người bị cây đè và gọi ngay cho cơ quan chức năng</td>*/}
+                          <td>
+                            <Button color="primary" style={{ margin:'5px'}} onClick={() => this.props.history.push('/analysis/detail/')} >Tạo báo cáo</Button>
+                            <Button color="danger" style={{ margin:'5px'}}>Xóa</Button>
+                          </td>
+                        </tr>
+
+                        </tbody>
+                      </Table>
+                      <Pagination>
+                        <PaginationItem disabled><PaginationLink previous tag="button">Prev</PaginationLink></PaginationItem>
+                        <PaginationItem active>
+                          <PaginationLink tag="button">1</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem><PaginationLink tag="button">2</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink tag="button">3</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink tag="button">4</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink next tag="button">Next</PaginationLink></PaginationItem>
+                      </Pagination>
+                    </CardBody>
+                  </Card>
                 </Col>
-                <Pagination
-                  activePage={2}
-                  pages={10}
-                  onActivePageChange={2}
-                />
               </Row>
+              {/*<Row>*/}
+              {/*  <Col xs="12" md="12">*/}
+              {/*    {this.renderCard("Sự cố cây đổ", "https://image3.tienphong.vn/665x449/Uploaded/2020/cajwqxjwp/2019_08_04/68431560_13252830442_cwej.jpg", "Đối với những cây bị đổ, nghiêng sẽ giao cho đơn vị quản lý thực hiện trồng dựng lại, chằng chống cẩn thận để đảm bảo cây xanh có thể sinh trưởng bình thường. \n" +*/}
+              {/*      "Đối với cây to bật gốc sẽ được chuyển về các vườn ươm. Nếu cây phù hợp với quy hoạch cây đô thị thì sẽ chuyển lại vị trí cũ sau khi phát triển tốt tại vườn ươm. Nếu không, sẽ thay thế cây phù hợp vào vị trí cũ.\n" +*/}
+              {/*      "\n" +*/}
+              {/*      "Đại diện Sở Xây dựng cho biết thêm, cây đổ tập trung vào một số loại cây như: Xà cừ, Lát hoa, Phượng, Bằng lăng.")}*/}
+              {/*    {this.renderCard("Sự cố cây xanh lưới điện đường giao thông", "https://vnn-imgs-f.vgcloud.vn/2018/06/14/18/cay-phuong-gia-do-de-5-nguoi-tren-pho-ha-noi-4.jpg", "Vụ việc khiến xe máy BKS 30N4-6407 có 3 người (1 người đàn ông, 1 phụ nữ và 1 trẻ em) và xe máy BKS 29Y3 371.14 có 2 người (1 phụ nữ và 1 trẻ em) đều bị thương, trong đó có 2 người bị thương nặng với những vết thương vùng đầu.\n" +*/}
+              {/*      "\n" +*/}
+              {/*      "Bà Vũ Thị Hồng, ở 84 Quán Sứ, kể: Lúc đó cây phượng đổ từ từ, 2 xe máy đi qua thì cây đổ ập xuống, mọi người nhanh chóng vào cứu người bị cây đè và gọi ngay cho cấp cứu.\n" +*/}
+              {/*      "\n" +*/}
+              {/*      "Khoảng 10 phút sau, 2 xe cấp cứu đã đến hiện trường đưa các nạn nhân vào bệnh viện. CSGT cùng lực lượng chức năng phường Trần Hưng Đạo có mặt phân luồng giao thông.")}*/}
+              {/*    {this.renderCard("Sự cố lưới điện nhà trường", "http://res.cgvdt.vn/ckfinder/images/2016/Thoi%20Su%20va%20Suy%20Nghi/2068/IMAG0405.jpg", "Cây cối bị đổ ảnh hưởng đến sinh kế của nhiều người. Có những thợ sửa xe, cắt tóc, quán cóc bao năm nương tựa vào bóng mát cây xanh để kiếm sống, nay bỗng dưng không còn chỗ bấu víu. Còn lập lại chỗ sinh nhai mới trong mảnh đất chật người rất khó. Cây đổ khiến lòng người cũng đổ theo.\n" +*/}
+              {/*      "\n" +*/}
+              {/*      "Việc cây đổ còn nói lên một thực trạng buồn là trong quá trình đô thị hóa, chúng ta đã không cân bằng được không gian xanh và không gian sống. Người ta quá mải mê, thậm chí tranh đấu cho không gian sống mà đã xem nhẹ, hoặc lãng quên đi cái phần không gian xanh. Xã hội ngày càng biến chuyển, trái đất ngày càng nóng lên, người ngày càng đông và không gian sống ngày một ngột ngạt. Trong sự chuyển biến đó, sẽ rất nguy hiểm nếu như một ngày nào đó, những bóng cây xanh không còn.")}*/}
+              {/*  </Col>*/}
+              {/*  <Pagination*/}
+              {/*    activePage={2}*/}
+              {/*    pages={10}*/}
+              {/*    onActivePageChange={2}*/}
+              {/*  />*/}
+              {/*</Row>*/}
             </div>
           </Col>
         </Row>
-        {/*<Row>*/}
-        {/*  <Col xs="12" md="12" className="mb-4">*/}
-        {/*    <Nav tabs>*/}
-        {/*      <NavItem>*/}
-        {/*        <NavLink>*/}
-        {/*          <TabPane tabId="2">*/}
-        {/*            <Row>*/}
-        {/*              <Col xs="12" md="8"><Card>*/}
-        {/*                <CardBody>*/}
-        {/*                  <Table responsive>*/}
-        {/*                    <thead>*/}
-        {/*                    <tr>*/}
-        {/*                      <th>ID</th>*/}
-        {/*                      <th>Brand*/}
-        {/*                        /!*<Input bsSize="sm" type="text" id="brand" name="brand"*!/*/}
-        {/*                        /!*               className="input-sm" placeholder="Tìm kiếm"*!/*/}
-        {/*                        /!*               onChange={(event) => this.handleChange(event)}/>*!/*/}
-        {/*                      </th>*/}
-        {/*                      <th>Price*/}
-        {/*                        /!*<Input bsSize="sm" type="text" id="phone" name="phone"*!/*/}
-        {/*                        /!*              className="input-sm" placeholder="Tìm kiếm"*!/*/}
-        {/*                        /!*              onChange={(event) => this.handleChange(event)}/>*!/*/}
-        {/*                      </th>*/}
-        {/*                      <th>Name</th>*/}
-        {/*                      <th>Description*/}
-        {/*                        /!*<Input bsSize="sm" type="text" id="email" name="email"*!/*/}
-        {/*                        /!*              className="input-sm" placeholder="Tìm kiếm"*!/*/}
-        {/*                        /!*              onChange={(event) => this.handleChange(event)}/>*!/*/}
-        {/*                      </th>*/}
-        {/*                      <th>image</th>*/}
-        {/*                      <th>Categories</th>*/}
-        {/*                      <th>Button</th>*/}
-        {/*                    </tr>*/}
-        {/*                    </thead>*/}
-        {/*                    <tbody>*/}
-        {/*                    {this.renderProducts()}*/}
-        {/*                    </tbody>*/}
-        {/*                  </Table>*/}
 
-        {/*                </CardBody>*/}
-        {/*              </Card></Col>*/}
-        {/*              <Col xs="12" md="4">*/}
-        {/*                <Card>*/}
-        {/*                  <CardBody>*/}
-        {/*                    <p>Category</p>*/}
-        {/*                    <Table responsive>*/}
-        {/*                      <thead>*/}
-        {/*                      <tr>*/}
-        {/*                        <th>Index</th>*/}
-        {/*                        <th>Name*/}
-        {/*                        </th>*/}
-        {/*                        <th>Description*/}
-        {/*                        </th>*/}
-        {/*                        <th>Button</th>*/}
-        {/*                      </tr>*/}
-        {/*                      </thead>*/}
-        {/*                      <tbody>*/}
-        {/*                      {this.renderCategories()}*/}
-        {/*                      </tbody>*/}
-        {/*                    </Table>*/}
-        {/*                    <hr/>*/}
-        {/*                    <p>Brand</p>*/}
-        {/*                    <Table responsive>*/}
-        {/*                      <thead>*/}
-        {/*                      <tr>*/}
-        {/*                        <th>Index</th>*/}
-        {/*                        <th>Brand*/}
-        {/*                        </th>*/}
-        {/*                        <th>Description*/}
-        {/*                        </th>*/}
-        {/*                        <th>Button</th>*/}
-        {/*                      </tr>*/}
-        {/*                      </thead>*/}
-        {/*                      <tbody>*/}
-        {/*                      {this.renderBrands()}*/}
-        {/*                      </tbody>*/}
-        {/*                    </Table>*/}
-        {/*                  </CardBody>*/}
-        {/*                </Card>*/}
-        {/*              </Col>*/}
-        {/*            </Row>*/}
-        {/*          </TabPane>*/}
-        {/*        </NavLink>*/}
-        {/*      </NavItem>*/}
-        {/*    </Nav>*/}
-        {/*    /!*<TabContent activeTab={this.state.activeTab[1]}>*!/*/}
-        {/*    /!*  {this.tabPane()}*!/*/}
-        {/*    /!*</TabContent>*!/*/}
-        {/*    {this.state.alert}*/}
-        {/*  </Col>*/}
-        {/*</Row>*/}
       </div>
     );
   }

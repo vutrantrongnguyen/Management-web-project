@@ -25,7 +25,7 @@ export default {
     },
     {
       name: '3 - Hiển thị sự cố trên bản đồ',
-      url: '/show',
+      url: '/maps',
       icon: 'icon-puzzle',
     },
     {

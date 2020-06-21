@@ -8,6 +8,7 @@ const ManageDetail = React.lazy(() => import('./views/Giga/Manage/ManageDetail')
 const Show = React.lazy(() => import('./views/Giga/Show/Show'));
 const Manual = React.lazy(() => import('./views/Giga/Manual/Manual'));
 const Info = React.lazy(() => import('./views/Giga/Info/Info'));
+const Maps = React.lazy(() => import('./views/Giga/Map/Map'))
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 
 // const BannerDetail = React.lazy(() => import('./views/Giga/BannerDetail/BannerDetail'));
@@ -16,6 +17,7 @@ const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/maps', name: 'Maps', component: Maps },
   { path: '/manage', exact: true, name: 'Quản lý danh sách sự cố', component: Manage },
   { path: '/manual', exact: true, name: 'Hướng dẫn sử dụng', component: Manual },
   { path: '/info', exact: true, name: 'Về chúng tôi', component: Info },
